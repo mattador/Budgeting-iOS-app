@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="qR7-CM-ezn">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SFDisplay-Medium.otf">
+            <string>SFUIDisplay-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Loader View Controller-->
+        <scene sceneID="T0h-1Y-lvC">
+            <objects>
+                <viewController storyboardIdentifier="LoaderViewController" id="qR7-CM-ezn" customClass="LoaderViewController" customModule="sugarmamma" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ATN-en-3dM"/>
+                        <viewControllerLayoutGuide type="bottom" id="U0b-7F-DpO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AYh-xN-Rvg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="j5c-Kw-aX4">
+                                <rect key="frame" x="16" y="70" width="343" height="534"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SugarBudget_logo" translatesAutoresizingMaskIntoConstraints="NO" id="IcS-92-o7O">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="114"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="canna_main page crop" translatesAutoresizingMaskIntoConstraints="NO" id="JeX-Zv-FOW">
+                                        <rect key="frame" x="0.0" y="214" width="343" height="320"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="320" id="hFi-Xf-xwC"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="j5c-Kw-aX4" firstAttribute="leading" secondItem="AYh-xN-Rvg" secondAttribute="leadingMargin" id="RYA-le-Rw7"/>
+                            <constraint firstItem="j5c-Kw-aX4" firstAttribute="top" secondItem="ATN-en-3dM" secondAttribute="bottom" constant="50" id="XDZ-1S-NAB"/>
+                            <constraint firstItem="j5c-Kw-aX4" firstAttribute="trailing" secondItem="AYh-xN-Rvg" secondAttribute="trailingMargin" id="jZ9-yB-uYI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="currentTutorialTip" destination="XWb-6F-TOM" id="1uJ-wC-jX3"/>
+                        <outlet property="loaderLogoAndImage" destination="j5c-Kw-aX4" id="8h8-Fh-n4A"/>
+                        <outlet property="slideShow" destination="mx4-tB-PuJ" id="od2-KU-VOm"/>
+                        <outlet property="welcomeTutorial" destination="Mzf-Pi-y4S" id="5QB-Sy-uWE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gEV-Ni-mdO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <view opaque="NO" contentMode="scaleToFill" id="Mzf-Pi-y4S" userLabel="Welcome tutorial">
+                    <rect key="frame" x="0.0" y="0.0" width="343" height="647"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OFn-lC-Lk4">
+                            <rect key="frame" x="313" y="16" width="30" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="dn0-c7-NJt"/>
+                                <constraint firstAttribute="width" constant="30" id="qze-V6-6RK"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="close"/>
+                            <connections>
+                                <action selector="closeTutorial:" destination="qR7-CM-ezn" eventType="touchUpInside" id="j34-ia-WeC"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dwo-oN-VnF">
+                            <rect key="frame" x="0.0" y="16" width="313" height="29"/>
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="24"/>
+                            <color key="textColor" red="0.61568627450000002" green="0.52156862749999999" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWb-6F-TOM">
+                            <rect key="frame" x="0.0" y="53" width="343" height="63"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="63" id="Yyc-cu-jnv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
+                            <color key="textColor" red="0.61568627450000002" green="0.52156862749999999" blue="0.74509803919999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mx4-tB-PuJ" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                            <rect key="frame" x="0.0" y="124" width="343" height="523"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="mx4-tB-PuJ" secondAttribute="bottom" id="3ge-f9-5nO"/>
+                        <constraint firstItem="mx4-tB-PuJ" firstAttribute="top" secondItem="XWb-6F-TOM" secondAttribute="bottom" constant="8" id="61R-nz-884"/>
+                        <constraint firstItem="Dwo-oN-VnF" firstAttribute="leading" secondItem="Mzf-Pi-y4S" secondAttribute="leading" id="90u-5o-cFX"/>
+                        <constraint firstItem="mx4-tB-PuJ" firstAttribute="leading" secondItem="Mzf-Pi-y4S" secondAttribute="leading" id="C8Z-UT-6cw"/>
+                        <constraint firstItem="XWb-6F-TOM" firstAttribute="top" secondItem="Dwo-oN-VnF" secondAttribute="bottom" constant="8" id="Lgy-CO-GcL"/>
+                        <constraint firstAttribute="trailing" secondItem="mx4-tB-PuJ" secondAttribute="trailing" id="Olz-xW-Tkc"/>
+                        <constraint firstItem="OFn-lC-Lk4" firstAttribute="top" secondItem="Mzf-Pi-y4S" secondAttribute="topMargin" constant="8" id="Ont-fI-ufZ"/>
+                        <constraint firstItem="OFn-lC-Lk4" firstAttribute="leading" secondItem="Dwo-oN-VnF" secondAttribute="trailing" id="Qi9-15-kUk"/>
+                        <constraint firstItem="XWb-6F-TOM" firstAttribute="trailing" secondItem="OFn-lC-Lk4" secondAttribute="trailing" id="gFI-4U-e2N"/>
+                        <constraint firstItem="XWb-6F-TOM" firstAttribute="leading" secondItem="Dwo-oN-VnF" secondAttribute="leading" id="ivZ-Gq-HOG"/>
+                        <constraint firstItem="Dwo-oN-VnF" firstAttribute="top" secondItem="Mzf-Pi-y4S" secondAttribute="topMargin" constant="8" id="nZ1-kV-qLR"/>
+                        <constraint firstItem="OFn-lC-Lk4" firstAttribute="leading" secondItem="Dwo-oN-VnF" secondAttribute="trailing" id="wCE-SA-D54"/>
+                        <constraint firstAttribute="trailingMargin" secondItem="OFn-lC-Lk4" secondAttribute="trailing" constant="-8" id="yeZ-Bw-H2u"/>
+                    </constraints>
+                </view>
+            </objects>
+            <point key="canvasLocation" x="-2193" y="-86"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="SugarBudget_logo" width="318" height="90"/>
+        <image name="canna_main page crop" width="236" height="232"/>
+        <image name="close" width="97" height="88"/>
+    </resources>
+</document>
