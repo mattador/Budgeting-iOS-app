@@ -269,11 +269,11 @@ class DashboardBudgetManagerDetailViewController: BaseSetupControllerViewControl
             }
             frequencyMenu.addAction(UIAlertAction(title: option, style: .default, handler: actionHandler))
         }
-        frequencyMenu.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) -> Void in
+        /*frequencyMenu.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (action: UIAlertAction) -> Void in
             BudgetManager.deleteBudgetEntity(budgetEntity: budgetEntity)
             self.reloadData()
             self.dataTableView.reloadData()
-        }))
+        }))*/
         frequencyMenu.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(frequencyMenu, animated: true, completion: nil)
         
