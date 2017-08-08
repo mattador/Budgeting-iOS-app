@@ -52,10 +52,12 @@ class SavingGoalsPopupViewController: BaseSetupControllerViewController {
                         "date": goalDate.date
                     ]
                 )
+                AnalyticsHelper.notifyEvent(category: "user_event", action: "savings_goal_created", label: "Savings Goal created")
             }else{
                 goalEntity!.amount = amount
                 goalEntity!.goal_name = goalName.text
                 goalEntity!.goal_due_date = goalDate.date as NSDate?
+                AnalyticsHelper.notifyEvent(category: "user_event", action: "savings_goal_updated", label: "Savings Goal updated")
             }
             SavingGoalsManager.persistContext()
             dismiss(animated: true, completion: nil)
@@ -68,6 +70,7 @@ class SavingGoalsPopupViewController: BaseSetupControllerViewController {
         let alert = UIAlertController(title: "Are you sure you wish to delete this goal?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive, handler: {action in
             SavingGoalsManager.deleteGoal(goal: self.goalEntity!)
+            AnalyticsHelper.notifyEvent(category: "user_event", action: "savings_goal_deleted", label: "Savings Goal deleted")
             self.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))

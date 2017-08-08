@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -370,87 +371,72 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Was-hb-U4N">
-                                <rect key="frame" x="20" y="72" width="374" height="615"/>
+                                <rect key="frame" x="20" y="64" width="374" height="623"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips &amp; tricks" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5G-br-nPg">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="35"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="rER-Rm-gtN"/>
+                                            <constraint firstAttribute="height" constant="35" id="H0U-5B-ceO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="30"/>
                                         <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="300" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HPL-Rk-zdf">
-                                        <rect key="frame" x="0.0" y="38" width="374" height="577"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sx4-yj-FR1">
+                                        <rect key="frame" x="0.0" y="43" width="374" height="580"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsTableViewCell" rowHeight="300" id="f8H-6o-OBm" customClass="TipsTableViewCell" customModule="sugarmamma" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="374" height="300"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="TipsPlaylistTableViewCell" rowHeight="258" id="MaU-j3-inN" customClass="TipsPlaylistTableViewCell" customModule="sugarmamma" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="258"/>
                                                 <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f8H-6o-OBm" id="6jI-9O-kvl">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="299.66666666666669"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MaU-j3-inN" id="xh5-gu-QCZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="257.66666666666669"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="C7B-0a-Wh6">
-                                                            <rect key="frame" x="0.0" y="8" width="320" height="291"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R5J-5y-fjk">
+                                                            <rect key="frame" x="0.0" y="-0.33333333333334281" width="374" height="352"/>
                                                             <subviews>
-                                                                <webView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="qdE-t9-HIC">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
-                                                                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG2-Gd-MIk">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="25.333333333333336"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="320" id="bM1-Kc-Zys"/>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Lnz-dU-Sy4"/>
                                                                     </constraints>
-                                                                </webView>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip #1 – Shares VS Cash" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2G-zF-WMe">
-                                                                    <rect key="frame" x="0.0" y="138" width="320" height="27.666666666666657"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="23" id="Vre-ad-9pG"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="23"/>
+                                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="20"/>
                                                                     <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pqo-pP-xSD">
-                                                                    <rect key="frame" x="0.0" y="173.66666666666663" width="320" height="117.33333333333337"/>
-                                                                    <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit marn
-ultrices nisl ante, sed commodo erat luctus nec. Proin blandit
-enim sit amet dui gravida, eu imperdiet massa dapibus amed
-ultrices nisl ante, sed commodo erat luctus nec.</string>
-                                                                    <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="14"/>
-                                                                    <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CN-ap-dep" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                                                    <rect key="frame" x="0.0" y="41.333333333333329" width="374" height="239.33333333333337"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" secondItem="7CN-ap-dep" secondAttribute="height" multiplier="16:9" id="Hok-41-EFb"/>
+                                                                    </constraints>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhe-Vl-hZe">
+                                                                    <rect key="frame" x="0.0" y="296.66666666666669" width="374" height="55.333333333333314"/>
+                                                                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                                                                    <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
-                                                                    <string key="userLabel">Lorem ipsum dolor sit amet, consectetur adipiscing elit marn ultrices nisl ante, sed commodo erat luctus nec. Proin blandit enim sit amet dui gravida, eu imperdiet massa dapibus amed ultrices nisl ante, sed commodo erat luctus nec.</string>
                                                                 </label>
                                                             </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="d2G-zF-WMe" firstAttribute="leading" secondItem="C7B-0a-Wh6" secondAttribute="leading" id="UUh-Uy-gl2"/>
-                                                                <constraint firstAttribute="trailing" secondItem="d2G-zF-WMe" secondAttribute="trailing" id="jJr-1P-vck"/>
-                                                                <constraint firstItem="qdE-t9-HIC" firstAttribute="centerX" secondItem="C7B-0a-Wh6" secondAttribute="centerX" id="n5U-ML-2sm"/>
-                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="C7B-0a-Wh6" secondAttribute="bottom" id="Z8E-j2-4rW"/>
-                                                        <constraint firstItem="C7B-0a-Wh6" firstAttribute="centerX" secondItem="6jI-9O-kvl" secondAttribute="centerX" id="bEi-e9-peP"/>
-                                                        <constraint firstItem="C7B-0a-Wh6" firstAttribute="top" secondItem="6jI-9O-kvl" secondAttribute="top" constant="8" id="gYS-Cv-3op"/>
-                                                        <constraint firstAttribute="bottom" secondItem="C7B-0a-Wh6" secondAttribute="bottom" id="hhd-ol-xHQ"/>
-                                                        <constraint firstItem="C7B-0a-Wh6" firstAttribute="top" secondItem="6jI-9O-kvl" secondAttribute="top" constant="8" id="iUh-m1-60a"/>
-                                                        <constraint firstItem="C7B-0a-Wh6" firstAttribute="top" secondItem="6jI-9O-kvl" secondAttribute="top" constant="8" id="qMM-PJ-zgP"/>
-                                                        <constraint firstItem="C7B-0a-Wh6" firstAttribute="leading" secondItem="6jI-9O-kvl" secondAttribute="leading" id="wNg-Yd-gUI"/>
-                                                        <constraint firstAttribute="trailing" secondItem="C7B-0a-Wh6" secondAttribute="trailing" id="y5K-Tx-qB1"/>
+                                                        <constraint firstItem="R5J-5y-fjk" firstAttribute="leading" secondItem="xh5-gu-QCZ" secondAttribute="leading" id="DkR-7s-r8i"/>
+                                                        <constraint firstItem="R5J-5y-fjk" firstAttribute="top" secondItem="xh5-gu-QCZ" secondAttribute="top" id="NxN-gc-7LY"/>
+                                                        <constraint firstAttribute="bottom" secondItem="R5J-5y-fjk" secondAttribute="bottom" id="mYw-kP-RLH"/>
+                                                        <constraint firstAttribute="trailing" secondItem="R5J-5y-fjk" secondAttribute="trailing" id="t4S-eY-sIH"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <outlet property="TipsDescription" destination="pqo-pP-xSD" id="H1I-Qe-A2u"/>
-                                                    <outlet property="TipsLabel" destination="d2G-zF-WMe" id="ygk-Sz-qEW"/>
-                                                    <outlet property="TipsVIdeo" destination="qdE-t9-HIC" id="l0n-2k-wdJ"/>
+                                                    <outlet property="tipsPlaylistTitle" destination="JG2-Gd-MIk" id="M6y-1Q-Hwg"/>
+                                                    <outlet property="youtubePlayer" destination="7CN-ap-dep" id="sxE-iJ-708"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
-                                            <outlet property="dataSource" destination="kxd-Ci-10O" id="m16-Vt-eNx"/>
-                                            <outlet property="delegate" destination="kxd-Ci-10O" id="aSe-kE-l0n"/>
+                                            <outlet property="dataSource" destination="kxd-Ci-10O" id="HOX-r5-GRh"/>
+                                            <outlet property="delegate" destination="kxd-Ci-10O" id="GUc-sa-ZTM"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
@@ -458,10 +444,10 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Was-hb-U4N" firstAttribute="top" secondItem="jPk-9F-4g2" secondAttribute="bottom" constant="8" id="7WE-yv-96o"/>
-                            <constraint firstItem="Was-hb-U4N" firstAttribute="leading" secondItem="VxZ-qz-hXL" secondAttribute="leadingMargin" id="bvJ-CJ-0xE"/>
-                            <constraint firstItem="FDp-GF-z39" firstAttribute="top" secondItem="Was-hb-U4N" secondAttribute="bottom" id="pcG-wy-gOm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Was-hb-U4N" secondAttribute="trailing" id="q3X-Va-Cvb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Was-hb-U4N" secondAttribute="trailing" id="8Ad-tx-qm1"/>
+                            <constraint firstItem="Was-hb-U4N" firstAttribute="top" secondItem="jPk-9F-4g2" secondAttribute="bottom" id="UIb-Rw-OQd"/>
+                            <constraint firstItem="Was-hb-U4N" firstAttribute="leading" secondItem="VxZ-qz-hXL" secondAttribute="leadingMargin" id="YEd-DW-him"/>
+                            <constraint firstItem="Was-hb-U4N" firstAttribute="bottom" secondItem="FDp-GF-z39" secondAttribute="top" id="kjD-yx-kuh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Z9j-Rf-oah">
@@ -477,17 +463,17 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="bottom" secondItem="fgI-uc-a9z" secondAttribute="bottom" constant="6" id="qIB-yS-39B"/>
-                                <constraint firstItem="fgI-uc-a9z" firstAttribute="leading" secondItem="62T-dQ-20V" secondAttribute="leading" id="qhL-xt-SZQ"/>
-                                <constraint firstItem="fgI-uc-a9z" firstAttribute="top" secondItem="62T-dQ-20V" secondAttribute="top" id="tm8-yC-fzA"/>
-                                <constraint firstAttribute="trailing" secondItem="fgI-uc-a9z" secondAttribute="trailing" id="uJY-8U-fPd"/>
+                                <constraint firstItem="fgI-uc-a9z" firstAttribute="top" secondItem="62T-dQ-20V" secondAttribute="top" id="hhe-Mm-E86"/>
+                                <constraint firstAttribute="trailing" secondItem="fgI-uc-a9z" secondAttribute="trailing" id="iln-4C-pyL"/>
+                                <constraint firstAttribute="bottom" secondItem="fgI-uc-a9z" secondAttribute="bottom" constant="6" id="jam-yM-VI0"/>
+                                <constraint firstItem="fgI-uc-a9z" firstAttribute="leading" secondItem="62T-dQ-20V" secondAttribute="leading" id="lRg-Sa-NGA"/>
                             </constraints>
                         </view>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rgv-Kq-i57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="732" y="8100.8995502248881"/>
+            <point key="canvasLocation" x="730.43478260869574" y="8100.8152173913049"/>
         </scene>
         <!--Dashboard Financial Day View Controller-->
         <scene sceneID="MyX-w6-ZBj">
@@ -523,7 +509,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" rowHeight="80" sectionHeaderHeight="32" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="15O-yh-KP2">
-                                        <rect key="frame" x="0.0" y="71" width="382" height="629"/>
+                                        <rect key="frame" x="0.0" y="71" width="382" height="576"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="vJD-QN-wl9"/>
@@ -622,10 +608,10 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                                         </connections>
                                     </tableView>
                                     <button hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h8L-t0-Hnt">
-                                        <rect key="frame" x="0.0" y="700" width="382" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="655" width="382" height="45"/>
                                         <color key="backgroundColor" red="0.99607843139999996" green="0.85882352939999995" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="kod-tE-NBV"/>
+                                            <constraint firstAttribute="height" constant="45" id="dMe-qb-GkF"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFUIText-Light" family="SF UI Text" pointSize="14"/>
                                         <state key="normal" title="Add event">
@@ -678,7 +664,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grT-Lp-Mew" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1959" y="8843"/>
+            <point key="canvasLocation" x="1957.9710144927537" y="8842.6630434782619"/>
         </scene>
         <!--Dashboard Budget Manager View Controller-->
         <scene sceneID="pjY-2r-Jm5">
@@ -779,7 +765,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="934-oO-IfU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589.60000000000002" y="7241.8290854572715"/>
+            <point key="canvasLocation" x="589" y="7325"/>
         </scene>
         <!--Dashboard Financial Events View Controller-->
         <scene sceneID="Zb3-eb-5hA">
@@ -811,11 +797,11 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1vv-IS-qFV" customClass="CalendarView" customModule="sugarmamma" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="38" width="374" height="516"/>
+                                        <rect key="frame" x="0.0" y="38" width="374" height="508"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <datePicker hidden="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dna-mp-UIz">
-                                        <rect key="frame" x="0.0" y="558" width="374" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="554" width="374" height="0.0"/>
                                         <constraints>
                                             <constraint firstAttribute="height" id="grU-od-qls"/>
                                         </constraints>
@@ -955,7 +941,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="qHw-0l-MTI">
                                                             <rect key="frame" x="8" y="11" width="398" height="21.666666666666664"/>
                                                             <subviews>
-                                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="umc-K3-4Cl">
+                                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="umc-K3-4Cl">
                                                                     <rect key="frame" x="0.0" y="0.0" width="199" height="21.666666666666664"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wen-53-4BR">
@@ -1471,7 +1457,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kbi-pT-YWI" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="tab-home" selectedImage="tab-home" id="ddO-y6-JDB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OzD-La-ir2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OzD-La-ir2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1490,7 +1476,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dzc-wU-Vdu" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Budget Manager" image="tab-budget-manager" selectedImage="tab-budget-manager" id="bgs-HE-6UE"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="don-jZ-NSt">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="don-jZ-NSt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1509,7 +1495,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sei-oV-3l5" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Tips &amp; Tricks" image="tab-tips-&amp;-tricks" selectedImage="tab-tips-&amp;-tricks" id="mg1-eb-Ljq"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cvf-ig-ebO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="cvf-ig-ebO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1528,7 +1514,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ion-7x-NDn" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Financial Events" image="tab-special-events" selectedImage="tab-special-events" id="kKX-7Z-psS"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="yFD-Qy-U0U">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="yFD-Qy-U0U">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1547,7 +1533,7 @@ ultrices nisl ante, sed commodo erat luctus nec.</string>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YLF-Zu-qnl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Forecast" image="tab-forecast" selectedImage="tab-forecast" id="op2-5Z-TPK"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DKr-uj-IDX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="DKr-uj-IDX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

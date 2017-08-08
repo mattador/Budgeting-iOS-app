@@ -10,8 +10,8 @@ import UIKit
 import Foundation
 
 //beta versioning
-let CURRENT_VERSION = 1.42
-let BUILD_VERSION = 0.45
+let CURRENT_VERSION = 1.43
+let BUILD_VERSION = 0.46
 
 //Extensions
 extension UIColor{

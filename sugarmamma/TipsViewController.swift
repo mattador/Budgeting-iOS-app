@@ -25,6 +25,11 @@ class TipsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Dashboard Tips & Tips")
+    }
+    
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
