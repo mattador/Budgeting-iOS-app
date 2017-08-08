@@ -97,6 +97,8 @@ class BaseBudgetPopoverViewController: UIViewController, UITextFieldDelegate, UI
     @IBAction func deleteField(_ sender: UIButton) {
         let alert = UIAlertController(title: "Are you sure you wish to delete this Field?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive, handler: {action in
+            let eventCode = (self.selectedBudgetEntity!.category! + "_field_deleted").replacingOccurrences(of: " ", with: "_").lowercased()
+            AnalyticsHelper.notifyEvent(category: "user_event", action: eventCode, label: self.selectedBudgetEntity!.category! + " field deleted")
             BudgetManager.deleteBudgetEntity(budgetEntity: self.selectedBudgetEntity!)
             self.dismiss(animated: true, completion: nil)
         }))

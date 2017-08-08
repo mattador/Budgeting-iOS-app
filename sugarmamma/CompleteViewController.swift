@@ -23,6 +23,10 @@ class CompleteViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Complete Setup")
+    }
     
     @IBAction func completeSetup(_ sender: UIButton) {
         completeProfile()
@@ -36,6 +40,7 @@ class CompleteViewController: UIViewController {
                 user.profile_complete = true
                 UserManager.persistContext()
             }
+            AnalyticsHelper.notifyEvent(category: "user_action", action: "setup_completed", label: "Setup Completed")
         }
     }
 }

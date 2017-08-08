@@ -12,7 +12,7 @@ class SettingsTableViewController: UITableViewController {
     
     
     var sectionHeaders = ["Settings"]
-    var sectionContent = [["General settings", "Notifications settings"]]
+    var sectionContent = [["General settings"/*, "Notifications settings"*/]]
     
     
     override func viewDidLoad() {

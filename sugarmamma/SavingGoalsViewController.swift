@@ -32,6 +32,11 @@ class SavingGoalsViewController: BaseSetupControllerViewController, UITableViewD
         disableAddButtonObserver()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Savings Goals")
+    }
+    
     @IBAction func goalCreateAction(_ sender: UIButton) {
         let popupController = UIStoryboard(name: "Setup", bundle: Bundle.main).instantiateViewController(withIdentifier: "SavingGoalsPopupViewController") as! SavingGoalsPopupViewController
         popupController.modalPresentationStyle = UIModalPresentationStyle.popover

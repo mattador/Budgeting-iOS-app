@@ -59,6 +59,11 @@ class DashboardViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Dashboard")
+    }
+    
     func drawDividerLines(){
         // draw circle view for welcome "icon" located at center of dashboard
         dashboardCenter.layer.borderWidth = 1

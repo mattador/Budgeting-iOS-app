@@ -24,6 +24,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.sharedManager().enable = true
         Fabric.with([Crashlytics.self])
         //print(persistentContainer.persistentStoreCoordinator.persistentStores.first?.url)
+        
+        //GA configuration
+        guard let gai = GAI.sharedInstance() else {
+            assert(false, "Google Analytics not configured correctly")
+        }
+        
+        gai.defaultTracker = gai.tracker(withTrackingId: "UA-104224378-1")
+        // Optional: automatically report uncaught exceptions.
+        gai.trackUncaughtExceptions = true
+        
+        // Optional: set Logger to VERBOSE for debug information.
+        // Remove before app release.
+        gai.logger.logLevel = .error;
+    
         return true
     }
     

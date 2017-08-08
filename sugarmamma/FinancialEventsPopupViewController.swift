@@ -61,11 +61,13 @@ class FinancialEventsPopupViewController: BaseSetupControllerViewController, UIT
                     "date" : eventDatePicker.date,
                     "type" : eventTypes[eventTypePicker.selectedRow(inComponent: 0)].lowercased()
                     ])
+                AnalyticsHelper.notifyEvent(category: "user_event", action: "financial_event_created", label: "Financial Event created")
             }else{
                 eventEntity?.amount = amountDouble
                 eventEntity?.event_name = eventName.text!
                 eventEntity?.event_date = eventDatePicker.date as NSDate?
                 eventEntity?.type = eventTypes[eventTypePicker.selectedRow(inComponent: 0)].lowercased()
+                AnalyticsHelper.notifyEvent(category: "user_event", action: "financial_event_updated", label: "Financial Event updated")
             }
             FinancialEventManager.persistContext()
             dismiss(animated: true, completion: nil)
@@ -76,6 +78,7 @@ class FinancialEventsPopupViewController: BaseSetupControllerViewController, UIT
         let alert = UIAlertController(title: "Are you sure you wish to delete this event?", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.destructive, handler: {action in
             FinancialEventManager.deleteEvent(self.eventEntity!)
+            AnalyticsHelper.notifyEvent(category: "user_event", action: "financial_event_deleted", label: "Financial Event deleted")
             self.dismiss(animated: true, completion: nil)
         }))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.cancel, handler: nil))

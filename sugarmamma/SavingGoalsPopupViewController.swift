@@ -43,6 +43,7 @@ class SavingGoalsPopupViewController: BaseSetupControllerViewController {
     @IBAction func saveGoal(_ sender: UIButton) {
         if goalName.text != "" && goalAmount.text != ""{
             let amount = Double(goalAmount.text!) ?? 0.0
+            print(goalDate.date)
             if isNew{
                 SavingGoalsManager.create(
                     [

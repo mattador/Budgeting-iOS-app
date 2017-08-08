@@ -52,6 +52,11 @@ class DashboardFinancialEventsViewController: UIViewController, CalendarViewData
         self.calendarView.setDisplayDate(today, animated: false)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Dashboard Financial Events")
+    }
+    
     // MARK : KDCalendarDataSource
     
     func startDate() -> Date? {
@@ -85,7 +90,7 @@ class DashboardFinancialEventsViewController: UIViewController, CalendarViewData
         super.viewDidLayoutSubviews()
         let width = self.view.frame.size.width - 16.0 * 2
         let height = self.view.frame.size.height - 218 //60 for nav bar + 100 for header label and add button (approx)
-         self.calendarView.frame = CGRect(x: 0, y: 30, width: width, height: height)
+        self.calendarView.frame = CGRect(x: 0, y: 30, width: width, height: height)
     }
     
     

@@ -35,6 +35,11 @@ class IncomeViewController: BaseBudgetViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Income Budget")
+    }
+    
     override func hasIncompleteFields() -> Bool{
         if hasIncompleteData(BudgetManager.fetch("income", entityCategory: "salary")) ||
             hasIncompleteData(BudgetManager.fetch("income", entityCategory: "passive_income")){
@@ -42,5 +47,6 @@ class IncomeViewController: BaseBudgetViewController {
         }
         return false
     }
+    
     
 }

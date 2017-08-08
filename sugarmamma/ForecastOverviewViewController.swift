@@ -113,6 +113,12 @@ class ForecastOverviewViewController: UIViewController, UITableViewDelegate, UIT
         justLoaded = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //  forecastLineChart.animate(xAxisDuration: 0.5, yAxisDuration: 0.5)
+        AnalyticsHelper.notifyScreen("Dashboad Forecast")
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         if !justLoaded{
             reloadData()
@@ -220,11 +226,6 @@ class ForecastOverviewViewController: UIViewController, UITableViewDelegate, UIT
         chartDataSet.drawCircleHoleEnabled = true
         return chartDataSet
     }
-    
-    override open func viewWillAppear(_ animated: Bool) {
-        //  forecastLineChart.animate(xAxisDuration: 0.5, yAxisDuration: 0.5)
-    }
-    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return 4

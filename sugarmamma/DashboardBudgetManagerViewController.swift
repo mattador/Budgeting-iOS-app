@@ -20,6 +20,11 @@ class DashboardBudgetManagerViewController: UIViewController, UITableViewDataSou
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Dashboard Budget Manager")
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return budgetCategories.count
     }

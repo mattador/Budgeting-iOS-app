@@ -30,6 +30,11 @@ class FinancialEventsViewController: BaseSetupControllerViewController, UITableV
         collectTotals()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Financial Events")
+    }
+    
     @IBAction func eventChangeAction(_ sender: UIButton) {
         let indexPath = getIndexPathRelativeToUIView(sender)
         let financialEventEntity = self.sectionContent[(indexPath?.section)!][(indexPath?.row)!]

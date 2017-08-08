@@ -12,7 +12,6 @@ import ImageSlideshow
 class LoaderViewController: UIViewController {
     
     
-    
     @IBOutlet var welcomeTutorial: UIView!
     @IBOutlet weak var currentTutorialTip: UILabel!
     var welcomeTutorialTopConstraint: NSLayoutConstraint!
@@ -84,6 +83,12 @@ class LoaderViewController: UIViewController {
                 //self.continueToWelcomeScene()
             }
         })
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Loading")
+        AnalyticsHelper.notifyEvent(category: "user_event", action: "application_opened", label: "Application opened")
     }
     
     func displayTutorialAlert(){

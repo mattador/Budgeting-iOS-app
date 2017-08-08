@@ -26,4 +26,9 @@ class PersonalViewController: BaseBudgetViewController {
         return false
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        AnalyticsHelper.notifyScreen("Personal Budget")
+    }
+    
 }
