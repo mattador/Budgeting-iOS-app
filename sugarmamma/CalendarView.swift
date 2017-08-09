@@ -55,8 +55,7 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     lazy var gregorian : Calendar = {
         
         var cal = Calendar(identifier: Calendar.Identifier.gregorian)
-        
-        cal.timeZone = TimeZone(abbreviation: "UTC")!
+        //cal.timeZone = TimeZone(abbreviation: DateHelper.getTimezoneAbbreviation())!
         
         return cal
     }()
@@ -95,13 +94,13 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
                 return
             }
             
-            let secondsFromGMTDifference = TimeInterval(NSTimeZone.local.secondsFromGMT())
+            //let secondsFromGMTDifference = TimeInterval(NSTimeZone.local.secondsFromGMT())
             
             for event in events {
                 let flags: NSCalendar.Unit = [NSCalendar.Unit.month, NSCalendar.Unit.day]
                 
-                let startDate = event.event_date?.addingTimeInterval(secondsFromGMTDifference)
-                let endDate = event.event_date?.addingTimeInterval(secondsFromGMTDifference)
+                let startDate = event.event_date //?.addingTimeInterval(secondsFromGMTDifference)
+                let endDate = event.event_date //?.addingTimeInterval(secondsFromGMTDifference)
                 
                 // Get the distance of the event from the start
                 let distanceFromStartComponent = (self.gregorian as NSCalendar).components( flags, from:startOfMonthCache, to: startDate! as Date, options: NSCalendar.Options() )
@@ -280,7 +279,7 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         let dayCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as! CalendarDayCell
         
         let currentMonthInfo : [Int] = monthInfo[(indexPath as NSIndexPath).section]! // we are guaranteed an array by the fact that we reached this line (so unwrap)
-        
+            
         let fdIndex = currentMonthInfo[FIRST_DAY_INDEX]
         let nDays = currentMonthInfo[NUMBER_OF_DAYS_INDEX]
         
@@ -310,9 +309,14 @@ class CalendarView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
         
         
         if let eventsForDay = eventsByIndexPath[fromStartOfMonthIndexPath] {
-            
+            /*print("events for day....")
+            print(fromStartOfMonthIndexPath)
+            print(eventsForDay)
+            print(eventsForDay[0].endDate)
+            print(eventsForDay[0].startDate)
+            print(eventsForDay[0].title)*/
             dayCell.eventsCount = eventsForDay.count
-            } else {
+        } else {
             dayCell.eventsCount = 0
         }
         

@@ -172,7 +172,7 @@ class DashboardBudgetManagerDetailViewController: BaseSetupControllerViewControl
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.resignFirstResponder()
-        print("OK editing complete...")
+        //print("OK editing complete...")
         if let indexPath = getIndexPathRelativeToUIView(textField){
             //update budget entity
             //print("category is \(budgetCategory)")
