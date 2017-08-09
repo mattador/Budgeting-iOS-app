@@ -40,8 +40,8 @@ class DashboardFinancialEventsViewController: UIViewController, CalendarViewData
         tomorrowComponents.day = 1
         
         let today = Date()
-        //print(today) //timezone bug? shows yesterday not today
-        
+        print(today) //timezone bug? shows yesterday not today
+        print("//timezone bug? shows yesterday not today")
         
         if let tomorrow = (self.calendarView.calendar as NSCalendar).date(byAdding: tomorrowComponents, to: today, options: NSCalendar.Options()) {
             self.calendarView.selectDate(tomorrow)
@@ -67,7 +67,7 @@ class DashboardFinancialEventsViewController: UIViewController, CalendarViewData
         dateComponent.year = Calendar.current.dateComponents([.year], from: Date()).year
         dateComponent.month = 1
         dateComponent.day = 1
-        dateComponent.timeZone = TimeZone(abbreviation: "UTC")
+        //dateComponent.timeZone = TimeZone(abbreviation: DateHelper.getTimezoneAbbreviation())
         return Calendar.current.date(from: dateComponent)
         
     }
@@ -117,8 +117,12 @@ class DashboardFinancialEventsViewController: UIViewController, CalendarViewData
         
         if let startDate = self.startDate(),
             let endDate = self.endDate() {
+            //print(startDate)
+            //print(" to ")
+            //print(endDate)
             self.calendarView.events = FinancialEventManager.fetchBetweenRange(start: startDate, end: endDate)
-            //print(self.calendarView.events)
+            //print(self.calendarView.events!)
+            //print("----end------")
         }
     }
     

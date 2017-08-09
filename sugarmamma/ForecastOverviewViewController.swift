@@ -86,7 +86,7 @@ class ForecastOverviewViewController: UIViewController, UITableViewDelegate, UIT
     
     lazy var gregorian : Calendar = {
         var cal = Calendar(identifier: Calendar.Identifier.gregorian)
-        cal.timeZone = TimeZone(abbreviation: "UTC")!
+        //cal.timeZone = TimeZone(abbreviation: DateHelper.getTimezoneAbbreviation())!
         return cal
     }()
     

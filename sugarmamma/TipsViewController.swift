@@ -10,6 +10,8 @@ import UIKit
 
 class TipsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tipsTable: UITableView!
+    
     var videos: [[String:String]] = [
         ["playlist_id": "PL5rsyLxwQpVhCvBe8ZCVzyQwh7af-fYhW", "title": "Sugarbudget App"],
         ["playlist_id": "PL5rsyLxwQpVgDuz3K6rHq4J-iZM6qPQJd", "title": "App Tips"],
@@ -23,6 +25,8 @@ class TipsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //tipsTable.rowHeight = UITableViewAutomaticDimension
+        //tipsTable.estimatedRowHeight = 140
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +43,7 @@ class TipsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return (UITableViewAutomaticDimension + CGFloat(25))
+        return UITableViewAutomaticDimension
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
@@ -49,10 +53,10 @@ class TipsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if videos[indexPath.row]["playlist_id"] != nil{
             cell.youtubePlayer.loadPlaylistID(videos[indexPath.row]["playlist_id"]!)
             /*cell.youtubePlayer.playerVars = [
-                "playsinline": "1" as AnyObject,
-                "controls": "0" as AnyObject,
-                "showinfo": "0" as AnyObject
-            ]*/
+             "playsinline": "1" as AnyObject,
+             "controls": "0" as AnyObject,
+             "showinfo": "0" as AnyObject
+             ]*/
         }else{
             cell.youtubePlayer.loadVideoID(videos[indexPath.row]["video_id"]!)
         }

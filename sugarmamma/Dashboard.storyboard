@@ -382,50 +382,55 @@
                                         <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sx4-yj-FR1">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="272" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sx4-yj-FR1">
                                         <rect key="frame" x="0.0" y="43" width="374" height="580"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="TipsPlaylistTableViewCell" rowHeight="258" id="MaU-j3-inN" customClass="TipsPlaylistTableViewCell" customModule="sugarmamma" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="28" width="374" height="258"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="TipsPlaylistTableViewCell" rowHeight="272" id="MaU-j3-inN" customClass="TipsPlaylistTableViewCell" customModule="sugarmamma" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="374" height="272"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MaU-j3-inN" id="xh5-gu-QCZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="257.66666666666669"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="272"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="R5J-5y-fjk">
-                                                            <rect key="frame" x="0.0" y="-0.33333333333334281" width="374" height="352"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="AEF-nr-Afc">
+                                                            <rect key="frame" x="0.0" y="0.0" width="374" height="272"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JG2-Gd-MIk">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="25.333333333333336"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="Lnz-dU-Sy4"/>
-                                                                    </constraints>
-                                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="20"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="374" height="35.666666666666664"/>
+                                                                    <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="18"/>
                                                                     <color key="textColor" red="0.26274509800000001" green="0.2901960784" blue="0.3294117647" alpha="1" colorSpace="calibratedRGB"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7CN-ap-dep" customClass="YouTubePlayerView" customModule="YouTubePlayer">
-                                                                    <rect key="frame" x="0.0" y="41.333333333333329" width="374" height="239.33333333333337"/>
+                                                                    <rect key="frame" x="0.0" y="43.666666666666671" width="374" height="210.33333333333331"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" secondItem="7CN-ap-dep" secondAttribute="height" multiplier="16:9" id="Hok-41-EFb"/>
+                                                                        <constraint firstAttribute="width" secondItem="7CN-ap-dep" secondAttribute="height" multiplier="16:9" id="OeY-wa-5hD"/>
                                                                     </constraints>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhe-Vl-hZe">
-                                                                    <rect key="frame" x="0.0" y="296.66666666666669" width="374" height="55.333333333333314"/>
-                                                                    <fontDescription key="fontDescription" name="SFUIText-Medium" family="SF UI Text" pointSize="14"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh3-9v-npX">
+                                                                    <rect key="frame" x="0.0" y="262" width="374" height="10"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="10" id="LLj-Rq-Rdv"/>
+                                                                    </constraints>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
+                                                            <constraints>
+                                                                <constraint firstAttribute="trailing" secondItem="7CN-ap-dep" secondAttribute="trailing" id="5cn-QM-eRQ"/>
+                                                                <constraint firstItem="7CN-ap-dep" firstAttribute="leading" secondItem="AEF-nr-Afc" secondAttribute="leading" id="Jp4-Tb-B09"/>
+                                                                <constraint firstItem="JG2-Gd-MIk" firstAttribute="leading" secondItem="AEF-nr-Afc" secondAttribute="leading" id="OjH-pP-fkt"/>
+                                                            </constraints>
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="R5J-5y-fjk" firstAttribute="leading" secondItem="xh5-gu-QCZ" secondAttribute="leading" id="DkR-7s-r8i"/>
-                                                        <constraint firstItem="R5J-5y-fjk" firstAttribute="top" secondItem="xh5-gu-QCZ" secondAttribute="top" id="NxN-gc-7LY"/>
-                                                        <constraint firstAttribute="bottom" secondItem="R5J-5y-fjk" secondAttribute="bottom" id="mYw-kP-RLH"/>
-                                                        <constraint firstAttribute="trailing" secondItem="R5J-5y-fjk" secondAttribute="trailing" id="t4S-eY-sIH"/>
+                                                        <constraint firstItem="AEF-nr-Afc" firstAttribute="leading" secondItem="xh5-gu-QCZ" secondAttribute="leading" id="HqW-D0-vRK"/>
+                                                        <constraint firstItem="AEF-nr-Afc" firstAttribute="top" secondItem="xh5-gu-QCZ" secondAttribute="top" id="bPe-v2-bCG"/>
+                                                        <constraint firstAttribute="trailing" secondItem="AEF-nr-Afc" secondAttribute="trailing" id="cnO-og-Yfy"/>
+                                                        <constraint firstAttribute="bottom" secondItem="AEF-nr-Afc" secondAttribute="bottom" id="rLf-Xj-q8S"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
@@ -470,6 +475,9 @@
                             </constraints>
                         </view>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tipsTable" destination="Sx4-yj-FR1" id="XDT-d0-WZn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rgv-Kq-i57" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

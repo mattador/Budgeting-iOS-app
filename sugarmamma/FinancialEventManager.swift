@@ -46,7 +46,7 @@ class FinancialEventManager: NSObject {
                 let context = appDelegate.persistentContainer.viewContext
                 financialEvents = try context.fetch(request)
             }catch{
-                print(error.localizedDescription)
+                //print(error.localizedDescription)
             }
         }
         return financialEvents
@@ -67,7 +67,7 @@ class FinancialEventManager: NSObject {
                 financialEvents = try context.fetch(request)
                 //print(financialEvents)
             }catch{
-                print(error.localizedDescription)
+                //print(error.localizedDescription)
             }
         }
         return financialEvents
@@ -81,7 +81,7 @@ class FinancialEventManager: NSObject {
                 let context = appDelegate.persistentContainer.viewContext
                 financialEvents = try context.fetch(request)
             }catch{
-                print(error.localizedDescription)
+                //print(error.localizedDescription)
             }
         }
         return financialEvents

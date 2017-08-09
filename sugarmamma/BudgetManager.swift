@@ -114,7 +114,7 @@ class BudgetManager: NSObject {
                 let context = appDelegate.persistentContainer.viewContext
                 budget = try context.fetch(request)
             }catch{
-                print(error.localizedDescription)
+                //print(error.localizedDescription)
             }
         }
         return budget
@@ -133,7 +133,7 @@ class BudgetManager: NSObject {
                 
                 budget = try context.fetch(request)
             }catch{
-                print(error.localizedDescription)
+                //print(error.localizedDescription)
             }
         }
         return budget

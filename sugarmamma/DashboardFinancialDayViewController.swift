@@ -44,6 +44,7 @@ class DashboardFinancialDayViewController: UIViewController, UITableViewDelegate
     public func reloadData(){
         events = FinancialEventManager.fetchByDate(date: financialDayDate!)
         if events.count == 0{
+            //print("no events found for \(financialDayDate!)")
             _ = self.navigationController?.popToRootViewController(animated: true)
         }
     }
