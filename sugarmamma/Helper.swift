@@ -10,8 +10,9 @@ import UIKit
 import Foundation
 
 //beta versioning
-let CURRENT_VERSION = 1.43
-let BUILD_VERSION = 0.46
+let BUILD_VERSION = 0.49
+let CURRENT_VERSION = 1.46
+let ANALYTICS_TRACKER_ID = "UA-102556218-1"
 
 //Extensions
 extension UIColor{

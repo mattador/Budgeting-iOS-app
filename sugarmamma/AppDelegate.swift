@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
+    var orientationLock = UIInterfaceOrientationMask.portrait
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -28,16 +29,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //GA configuration
         guard let gai = GAI.sharedInstance() else {
             assert(false, "Google Analytics not configured correctly")
+            return true
         }
         
-        gai.defaultTracker = gai.tracker(withTrackingId: "UA-104224378-1")
+        gai.defaultTracker = gai.tracker(withTrackingId: ANALYTICS_TRACKER_ID)
         // Optional: automatically report uncaught exceptions.
         gai.trackUncaughtExceptions = true
         
         // Optional: set Logger to VERBOSE for debug information.
         // Remove before app release.
         gai.logger.logLevel = .error;
-    
+        
         return true
     }
     
@@ -65,6 +67,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.saveContext()
     }
     
+    
+    
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return self.orientationLock
+    }
+        
     // MARK: - Core Data stack
     
     lazy var persistentContainer: NSPersistentContainer = {

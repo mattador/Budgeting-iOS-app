@@ -13,9 +13,9 @@ class TipsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tipsTable: UITableView!
     
     var videos: [[String:String]] = [
-        ["playlist_id": "PL5rsyLxwQpVhCvBe8ZCVzyQwh7af-fYhW", "title": "Sugarbudget App"],
-        ["playlist_id": "PL5rsyLxwQpVgDuz3K6rHq4J-iZM6qPQJd", "title": "App Tips"],
-        ["playlist_id": "PL5rsyLxwQpVg0ztouQ8qxG1VI8LSGtF4j", "title": "General"],
+        ["playlist_id": "PL5rsyLxwQpVhCvBe8ZCVzyQwh7af-fYhW", "title": "How to use SugarBudget"],
+        ["playlist_id": "PL5rsyLxwQpVgDuz3K6rHq4J-iZM6qPQJd", "title": "SugarBudget Tips"],
+        ["playlist_id": "PL5rsyLxwQpVg0ztouQ8qxG1VI8LSGtF4j", "title": "Money Advice"],
         ["video_id": "3vg00xL3qBQ", "title": "How to Manage Your Accounts, Cashflow, Savings & Be Debt Free!"],
         ["video_id": "yrgI2irRulY", "title": "Top 5 Golden Rules for Investing & Building Wealth"],
         ["video_id": "tQoVROOXTkE", "title": "How and Why You Should Build on Solid Foundations for Wealth"],
@@ -32,6 +32,24 @@ class TipsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         AnalyticsHelper.notifyScreen("Dashboard Tips & Tips")
+        //allow rotation on this controller to handle youtube videos
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = UIInterfaceOrientationMask.all
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        if let delegate = UIApplication.shared.delegate as? AppDelegate {
+            delegate.orientationLock = UIInterfaceOrientationMask.portrait
+            UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+        }
+    }
+    
+    private func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.all
+    }
+    private func shouldAutorotate() -> Bool {
+        return true
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {

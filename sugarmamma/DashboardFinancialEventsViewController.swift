@@ -40,8 +40,8 @@ class DashboardFinancialEventsViewController: UIViewController, CalendarViewData
         tomorrowComponents.day = 1
         
         let today = Date()
-        print(today) //timezone bug? shows yesterday not today
-        print("//timezone bug? shows yesterday not today")
+        //print(today) //timezone bug? shows yesterday not today
+        //print("//timezone bug? shows yesterday not today")
         
         if let tomorrow = (self.calendarView.calendar as NSCalendar).date(byAdding: tomorrowComponents, to: today, options: NSCalendar.Options()) {
             self.calendarView.selectDate(tomorrow)
